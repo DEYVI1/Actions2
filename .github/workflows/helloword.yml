@@ -1,0 +1,21 @@
+name: Hola mundo Actions GH
+
+on: 
+    push:
+        branches:
+            - main
+
+jobs: 
+    hola_mundo:
+            name: Imrpimir Hola mundo 
+            runs-on: self-hosted
+            steps:
+                - name: Revisar el repo
+                  uses: actions/checkout@v2
+
+                - name: install libs
+                  run: pip install -r requeriments.txt
+                - name: update
+                  run: choco install python
+                - name: Ejecutar condigo de python
+                  run: python app.py
